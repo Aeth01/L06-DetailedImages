@@ -13,10 +13,12 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val nameStr = intent.getStringExtra("name")
-        binding.name.text = nameStr
-
-        val authorStr = intent.getStringExtra("author")
-        binding.author.text = authorStr
+        val location = intent.getParcelableExtra<Location>("location")
+        location?.let{
+            binding.name.text = it.name
+            binding.author.text = it.author
+            binding.latitude.text = it.latitude.toString()
+            binding.longitude.text = it.longitude.toString()
+        }
     }
 }

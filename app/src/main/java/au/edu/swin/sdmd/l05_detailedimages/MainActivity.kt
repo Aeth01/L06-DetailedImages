@@ -22,14 +22,8 @@ class MainActivity : AppCompatActivity() {
         val vStation = findViewById<TextView>(R.id.station)
         vStation.setOnClickListener {
             val detailActivityIntent = Intent(this, DetailActivity::class.java)
-            detailActivityIntent.putExtra("name", station.name)
-            detailActivityIntent.putExtra("author", station.author)
-            detailActivityIntent.putExtra("latitude", station.latitude)
-            detailActivityIntent.putExtra("longitude", station.longitude)
-//            detailActivityIntent.putExtra("location", station)
+            detailActivityIntent.putExtra("location", station)
             startActivity(detailActivityIntent)
         }
     }
-
-
 }
